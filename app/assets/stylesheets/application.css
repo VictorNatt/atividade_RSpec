@@ -1,0 +1,444 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+}
+
+/* ===== Home ===== */
+.page-home {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+/* ===== Navbar ===== */
+nav {
+  background: #3498db;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+nav .logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: white;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a.login {
+  background: transparent;
+  border: 2px solid white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+}
+
+nav ul li a.login:hover {
+  background: white;
+  color: #3498db;
+}
+
+nav ul li a.cadastro {
+  background: #2ecc71;
+  border: 2px solid #2ecc71;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+}
+
+nav ul li a.cadastro:hover {
+  background: #27ae60;
+  border-color: #27ae60;
+}
+
+/* ===== Login e Signup ===== */
+.page-login,
+.page-password,
+.page-edit,
+.page-signup,
+.page-books,
+.page-loans {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  max-width: 450px;
+  width: 100%;
+}
+/* ===== Layout com Sidebar ===== */
+.sidebar-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar fixa e estilizada */
+.sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background: #3498db;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: fixed; /* fixa a sidebar na tela */
+  top: 0;
+  left: 0;
+}
+
+/* Perfil na sidebar */
+.sidebar .profile {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sidebar .avatar {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.sidebar p {
+  font-size: 0.9rem;
+  word-wrap: break-word;
+}
+
+/* Links da sidebar */
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* empilha os links */
+  flex-grow: 1;           /* ocupa o espaço restante */
+  justify-content: flex-start;
+}
+
+.sidebar nav ul li {
+  margin: 12px 0;
+}
+
+.sidebar nav ul li a,
+.sidebar nav ul li .logout-btn {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li .logout-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Conteúdo principal */
+.content {
+  margin-left: 220px; /* espaço equivalente à largura da sidebar */
+  flex: 1;
+  padding: 40px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+/* Títulos e parágrafos da dashboard */
+.page-dashboard h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 16px;
+}
+
+.page-dashboard p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+/* Botões e links da dashboard */
+.page-dashboard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page-dashboard ul li {
+  margin: 12px 0;
+}
+
+.page-dashboard ul li a,
+.page-dashboard ul li button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  background: #3498db;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.page-dashboard ul li a:hover,
+.page-dashboard ul li button:hover {
+  background: #2980b9;
+}
+
+/* Campos de formulário */
+form div {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 6px rgba(52,152,219,0.3);
+  outline: none;
+}
+
+/* Botões */
+input[type="submit"], button {
+  width: 100%;
+  padding: 12px;
+  background: #3498db;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+input[type="submit"]:hover, button:hover {
+  background: #2980b9;
+}
+
+.btn{
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  margin-right: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none; 
+  transition: background-color 0.2s;
+  
+}
+.btn-editar{
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none; 
+  transition: background-color 0.2s;
+  
+}
+.btn-editar:hover{
+  text-decoration: none; 
+  background: #2980b9;
+
+}
+.btn-danger {
+  background-color: #db606d;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Area livros */
+.content h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.book-item {
+  background-color: #fefefe;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 15px;
+}
+
+.book-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.book-item h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.book-item p {
+  margin: 5px 0;
+  color: #555;
+  font-size: 14px;
+}
+.book-actions {
+  display: flex;
+  gap: 10px; /* espaço entre os botões */
+  margin-top: 10px;
+}
+
+/* Tabela emprestimos */
+.page-loans .container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.page-loans table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.page-loans th {
+  padding: 12px 15px;
+  font-weight: 600;
+  border-radius: 4px 4px 0 0;
+}
+
+.page-loans td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.page-loans tbody tr:nth-child(even) {
+  background-color: #f1f3f5;
+}
+
+.page-loans tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+/* Links */
+a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+.action {
+  display: flex;
+}
+.btn-link {
+  background-color: #3498db;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s;
+
+}
+.btn-link:hover {
+  background-color: #2980b9;
+  text-decoration: none;
+}
+
+
+/* mensagem de erro */
+.error-message {
+  background: #ffe6e6;
+  border: 1px solid #ff4d4d;
+  color: #b30000;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.error-message ul {
+  margin: 0;
+  padding-left: 20px;
+}
+.flash {
+  max-width: 600px;
+  margin: 20px auto;  
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.flash.notice {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.flash.alert {
+  background-color: #f8d7da;
+  color: #721c24;
+}

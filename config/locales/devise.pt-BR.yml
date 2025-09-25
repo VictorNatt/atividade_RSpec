@@ -1,0 +1,44 @@
+pt-BR:
+  devise:
+    failure:
+      not_found_in_database: "Email não encontrado."
+      invalid: "Email ou senha inválidos."
+      already_authenticated: "Você já está autenticado."
+      inactive: "Conta não ativada."
+      locked: "Conta bloqueada."
+    registrations:
+      edit_title: "Editar %{resource}"
+      leave_blank: "(deixe em branco se não quiser alterar)"
+      current_password_note: "(precisamos da sua senha atual para confirmar as alterações)"
+      cancel_account: "Cancelar minha conta"
+      cancel_confirm: "Tem certeza que deseja cancelar sua conta?"
+      back: "Voltar"
+      update_button: "Atualizar"
+      unhappy: "Certeza?"
+    sessions:
+      signed_in: "Login realizado com sucesso!"
+      signed_out: "Você saiu da sua conta."
+      already_signed_out: "Você já saiu da sua conta."
+    attributes:
+      email: "Email"
+      password: "Senha"
+      password_confirmation: "Confirmação de senha"
+      current_password: "Senha atual"
+  activerecord:
+    models:
+      user: "Usuário"
+    attributes:
+      user:
+        email: "Email"
+        password: "Senha"
+        password_confirmation: "Confirmação de senha"
+  errors:
+    messages:
+      blank: "não pode ficar em branco"
+      invalid: "inválido"
+      taken: "já está em uso"
+      too_short: "é muito curto (mínimo %{count} caracteres)"
+      confirmation: "não corresponde à confirmação"
+      not_saved: "Não foi possível salvar %{resource}: %{errors}"
+      invalid_current_password: "Senha atual inválida"
+

@@ -1,0 +1,17 @@
+<h1>Novo Empréstimo</h1>
+
+<%= form_with(model: @loan, local: true) do |form| %>
+  <div>
+    <%= form.label :book_id, "Livro" %>
+    <%= form.collection_select :book_id, Book.all, :id, :title %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, "Usuário" %>
+    <%= form.collection_select :user_id, User.all, :id, :email %>
+  </div>
+
+  <div>
+    <%= form.submit "Criar Empréstimo" %>
+  </div>
+<% end %>

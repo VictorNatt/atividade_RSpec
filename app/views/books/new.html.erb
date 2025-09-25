@@ -1,0 +1,28 @@
+<div class="sidebar-container">
+  <%= render "shared/sidebar" %>
+
+  <div class="page-books">
+    <div class="container">
+      <h1>Novo Livro</h1>
+
+      <%= form_with(model: @book, local: true, html: { class: "book-form" }) do |form| %>
+        <div>
+          <%= form.label :title, "Título" %>
+          <%= form.text_field :title %>
+        </div>
+
+        <div>
+          <%= form.label :author, "Autor" %>
+          <%= form.text_field :author %>
+        </div>
+
+        <div>
+          <%= form.label :description, "Descrição" %>
+          <%= form.text_area :description %>
+        </div>
+
+        <%= form.submit "Salvar", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

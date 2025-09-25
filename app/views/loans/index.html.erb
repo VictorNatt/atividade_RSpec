@@ -1,0 +1,38 @@
+<div class="sidebar-container">
+  <%= render "shared/sidebar" %>
+
+  <div class="page-loans">
+    <div class="container">
+      <h1><%= current_user.admin? ? "Todos os Empréstimos" : "Meus Empréstimos" %></h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Livro</th>
+            <th>Usuário</th>
+            <% if current_user.admin? %>
+              <th>Ações</th>
+            <% end %>
+          </tr>
+        </thead>
+        <tbody>
+          <% @loans.each do |loan| %>
+            <tr>
+              <td><%= loan.book.title %></td>
+              <td><%= loan.user.email %></td>
+              <% if current_user.admin? %>
+                <td>
+                  <%= button_to "Marcar como devolvido",
+                                loan_path(loan),
+                                method: :delete,
+                                data: { confirm: "Confirmar devolução?" },
+                                class: "btn-devolver" %>
+                </td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

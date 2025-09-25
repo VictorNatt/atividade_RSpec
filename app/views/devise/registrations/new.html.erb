@@ -1,0 +1,38 @@
+<div class="page-signup">
+  <div class="container">
+    <h2>Criar Conta</h2>
+    
+    <% if resource.errors.any? %>
+      <div class="error-message">
+        <ul>
+          <% resource.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div>
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div>
+        <%= f.label :password, "Senha" %>
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+
+      <div>
+        <%= f.label :password_confirmation, "Confirmar Senha" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div>
+        <%= f.submit "Cadastrar" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

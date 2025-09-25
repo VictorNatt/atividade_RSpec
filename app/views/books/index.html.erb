@@ -1,0 +1,33 @@
+<div class="page-books">
+  <div class="sidebar-container">
+    <%= render "shared/sidebar" %>
+    <div class="content">
+      <h1>Gerenciar Livros</h1>
+      <% if flash[:notice] %>
+        <div class="flash notice"><%= flash[:notice] %></div>
+      <% elsif flash[:alert] %>
+        <div class="flash alert"><%= flash[:alert] %></div>
+      <% end %>
+      <div class="books-list">
+        <% @books.each do |book| %>
+          <div class="book-item">
+            <h2><%= book.title %></h2>
+            <p><strong>Autor:</strong> <%= book.author %></p>
+            <p><%= book.description %></p>
+
+            <div class="book-actions">
+              <% if user_signed_in? %>
+                <%= button_to "Emprestar", book_loans_path(book), method: :post, class: "btn btn-primary" %>
+              <% end %>
+
+              <% if user_signed_in? && current_user.admin? %>
+                <%= link_to "Editar", edit_book_path(book), class: "btn-editar" %>
+                <%= button_to "Excluir Livro", book_path(book), method: :delete, data: { confirm: "Tem certeza que deseja excluir este livro?" }, class: "btn btn-danger" %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
